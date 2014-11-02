@@ -3,4 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_one :wallet
+  has_many :funds
+
+  after_initialize :initialize_fields
+
+  def initialize_fields
+    self.wallet = Wallet.new(points: 101010101)
+  end
 end

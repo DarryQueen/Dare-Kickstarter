@@ -3,14 +3,13 @@
     <p>I am a Rails app. Hear me roar.</p>
     <p>Here's an obligatory Glyphicon: <span class="glyphicon glyphicon-flag"></span></p>
 
-
-    <% if user_signed_in? %>
-  		<li>
- 			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
- 		</li>
+    <p>
+	<% if user_signed_in? %>
+	  Hello, <%= current_user.email %>!
+	  <br>
+	  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 	<% else %>
-  		<li>
-  			<%= link_to('Login', new_user_session_path)  %>  
- 		</li>
+	  <%= link_to('Login', new_user_session_path) %>  
 	<% end %>
+	</p>
 </div>
