@@ -3,6 +3,7 @@
 Instructions for deployment. Run in Ruby 2.1.3.
 
 1. Run <tt>bundle install</tt> to install all Ruby gems.
+1. Run <tt>rake db:migrate</tt> to migrate database.
 1. Copy and paste the <tt>secrets.yml.example</tt> to a <tt>secrets.yml</tt> file.
 
 Good luck!
