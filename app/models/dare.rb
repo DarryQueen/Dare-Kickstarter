@@ -4,6 +4,6 @@ class Dare < ActiveRecord::Base
   belongs_to :subject, :foreign_key => "subject_id", :class_name => "User"
   validates :description, length: { minimum: 10 }
   validates :title, presence: true
-  validates :subject_id, presence: true
+  validates :creator_id, presence: true
 
 end
