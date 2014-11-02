@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module DareKickstarter
   class Application < Rails::Application
+    # Site-wide global variables related to Dares.
+    config.min_description_length = 10
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
