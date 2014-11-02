@@ -11,6 +11,11 @@ module DareKickstarter
     # Site-wide global variables related to Dares.
     config.min_description_length = 10
 
+    # Override annoying Rails configurations.
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+        html_tag.html_safe
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
