@@ -16,11 +16,10 @@
     </div>
 
     <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <p class="navbar-text"><%= current_user.email %></p>
+          <p class="navbar-text navbar-right"><%= current_user.email %></p>
         <% else %>
-          <button href="<%= url_for(new_user_session_path) %>" type="button" class="btn btn-default navbar-btn ">Sign In</button>
+          <a href="<%= url_for(new_user_session_path) %>" class="btn btn-default navbar-btn navbar-right">Sign In</a>
         <% end %>
       </ul>
     </div>
