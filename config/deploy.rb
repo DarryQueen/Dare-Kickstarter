@@ -2,6 +2,7 @@
 lock '3.1.0'
 
 set :application, 'dare_kickstarter'
+set :user, 'deploy'
 set :repo_url, 'git@github.com:DarryQueen/Dare-Kickstarter.git'
 
 # Default branch is :master
