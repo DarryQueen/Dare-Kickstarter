@@ -4,8 +4,8 @@ class DaresController < ApplicationController
   end
 
   def create
-    @dare = Dare.new(dare_params)
-    @dare.creator = current_user
+    subject = User.find_by_email(params[:subject_email])
+    @dare = Dare.new(:title => params[:title], :description => params[:description], :creator => current_user, :subject => subject)
 
     @dare.save
     if @dare.save
@@ -16,10 +16,5 @@ class DaresController < ApplicationController
   end
 
   def index
-  end
-
-  private
-  def dare_params
-    params.require(:dare).permit(:title, :description)
   end
 end

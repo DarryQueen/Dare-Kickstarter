@@ -1,23 +1,30 @@
 <%= render 'errors' %>
 
-<%= form_for :dare, url: dares_path, html: { class: "form-horizontal", role: "form" } do |f| %>
+<%= form_tag '/dares', class: "form-horizontal" do %>
   <div class="form-group<%= ' has-error' if @dare.errors[:title].any? %>">
-    <%= f.label :title, class: 'col-sm-2 control-label' %>
+    <%= label_tag :title, nil, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-      <%= f.text_field :title, placeholder: 'Name of dare.', class: 'form-control' %>
+      <%= text_field_tag :title, nil, placeholder: 'Name of dare.', class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag :subject_email, 'Target Email', class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= text_field_tag :subject_email, nil, placeholder: 'Choose a target, or leave it an open dare.', class: 'form-control' %>
     </div>
   </div>
  
   <div class="form-group<%= ' has-error' if @dare.errors[:description].any? %>">
-    <%= f.label :description, class: 'col-sm-2 control-label' %>
+    <%= label_tag :description, nil, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-      <%= f.text_area :description, placeholder: 'Give a short description.', class: 'form-control', rows: '5', style: 'resize:none;' %>
+      <%= text_area_tag :description, nil, placeholder: 'Give a short description.', class: 'form-control', rows: '5', style: 'resize:none;' %>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit 'Submit', :class => 'btn btn-default' %>
+      <%= submit_tag 'Submit', :class => 'btn btn-default' %>
     </div>
   </div>
 <% end %>
