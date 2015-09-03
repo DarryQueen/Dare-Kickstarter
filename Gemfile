@@ -20,5 +20,12 @@ gem 'capistrano-bundler', '~> 1.1.2'
 gem 'capistrano-rails', '~> 1.1.1'
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 
-# Devise for user authentication:
+# User authentication:
 gem 'devise'
+gem 'cancancan'
+
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+# Handle API secrets:
+gem 'figaro'
